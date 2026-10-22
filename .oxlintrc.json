@@ -1,0 +1,33 @@
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "typescript", "oxc"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  },
+  "overrides": [
+    {
+      "files": ["src/components/**/*.ts", "src/components/**/*.tsx"],
+      "rules": {
+        "no-restricted-imports": [
+          "error",
+          {
+            "patterns": [
+              {
+                "group": ["@/state/*", "**/state/*", "@/api/client*", "**/api/client*", "@/api/todos*", "**/api/todos*"],
+                "message": "AD-19：组件只收 props，不得 import state/、api/client、api/todos（只允许 api/types、api/title、api/messages）"
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "files": ["e2e/**/*.ts"],
+      "rules": {
+        "react/rules-of-hooks": "off",
+        "no-empty-pattern": "off"
+      }
+    }
+  ]
+}

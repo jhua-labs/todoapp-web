@@ -1,0 +1,37 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# 测试产物（Vitest / Playwright）
+coverage/
+test-results/
+playwright-report/
+blob-report/
+playwright/.cache/
+
+# 本地环境变量（只提交 .env.example）
+.env
+.env.*
+!.env.example
+!.env.mock
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
